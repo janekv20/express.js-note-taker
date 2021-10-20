@@ -1,11 +1,24 @@
 {
-    "notes": [
-        {
-            "title":"",
-            "text":"Test text",
-            "id": "test123456"
-        }
-    ]
-   
+  "notes": [
+    {
+      "title": "",
+      "text": "Test text",
+      "id": "test123456"
+    },
+    {
+      "title": "Test",
+      "text": "tester1\n",
+      "id": "1"
+    },
+    {
+      "title": "sdfjsdikfjs",
+      "text": "dfdsf",
+      "id": "2"
+    },
+    {
+      "title": "test",
+      "text": "test",
+      "id": "3"
+    }
+  ]
 }
-   
