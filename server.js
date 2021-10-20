@@ -6,8 +6,8 @@ const PORT = process.env.PORT || 3001;
 const app = express ();
 
 //import the routes
-const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes');
+const apiRoutes = require('./routes/API/index');
+const htmlRoutes = require('./routes/HTML/index');
 
 //parse string or array data
 app.use(express.urlencoded({ extended: true }));

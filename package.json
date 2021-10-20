@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/janekv20/express.js-note-taker/issues"
   },
-  "homepage": "https://github.com/janekv20/express.js-note-taker#readme"
+  "homepage": "https://github.com/janekv20/express.js-note-taker#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
