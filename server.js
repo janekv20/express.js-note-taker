@@ -20,6 +20,6 @@ app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
 //create listen to variable PORT
-app.listen(3001, () => {
-    console.log('Sever now on running on port 3001');
+app.listen(PORT, () => {
+    console.log('Server now on running on port 3001');
 });
