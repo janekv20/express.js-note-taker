@@ -2,8 +2,7 @@
 const router = require('express').Router();
 //import db
 const { notes } = require('../../db/db');
-//import nanoID
-const { nanoid } = require('nanoid');
+
 //import notes functions
 const { createNewNote, validateNote } = require('../../lib/all-notes');
 
@@ -15,7 +14,7 @@ router.get('/notes', (req,res) => {
 
 //Post method
 router.post('/notes', (req, res) => {
-    req.body.id = nanoid();
+    req.body.id = notes.length.toString();
 
     if (!validateNote(req.body)){
         res.status(400).send('This note is missing information or not formatted properly.');
