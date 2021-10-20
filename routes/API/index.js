@@ -1,15 +1,28 @@
-// import path module
-const path = require('path');
-//import express router 
+//import express router
 const router = require('express').Router();
+//import db
+const { notes } = require('../../db/db');
+//import nanoID
+const { nanoid } = require('nanoid');
+//import notes functions
+const { createNewNote, validateNote } = require('../../lib/all-notes');
 
-//2 routes for html notes
-router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+//Get method
+router.get('/notes', (req,res) => {
+    let results = notes;
+    res.json(results);
 });
 
-router.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/notes.html'));
+//Post method
+router.post('/notes', (req, res) => {
+    req.body.id = nanoid();
+
+    if (!validateNote(req.body)){
+        res.status(400).send('This note is missing information or not formatted properly.');
+    } else {
+        const note = createNewNote(req.body, notes);
+        res.json(note)
+    }
 });
 
 module.exports = router;
